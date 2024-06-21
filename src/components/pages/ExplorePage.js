@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Col, Row, Button, Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 // IMAGES
 import banaue from "../../assets/images/banaue.png";
@@ -12,40 +13,49 @@ import coron  from "../../assets/images/coron.png";
 
 const ExplorePage = () => {
 
+    const navigate = useNavigate();
+
     const cards = [
         {
             id: 1,
             image: banaue,
+            image2: banaue,
             text: 'Banaue Rice Terraces'
         },
         {
             id: 2,
             image: puerto,
+            image2: banaue,
             text: 'Puerto Princesa Subterranean River'
         },
         {
             id: 3,
             image: chocolate,
+            image2: banaue,
             text: 'Chocolate Hills'
         },
         {
             id: 4,
             image: reef,
+            image2: banaue,
             text: 'Tubbataha Reef'
         },
         {
             id: 5,
             image: mayon,
+            image2: banaue,
             text: 'Mayon Volcano'
         },
         {
             id: 6,
             image: boracay,
+            image2: banaue,
             text: 'Boracay Island'
         },
         {
             id: 7,
             image: coron,
+            image2: banaue,
             text: 'Coron Island'
         },
     ];
@@ -55,7 +65,7 @@ const ExplorePage = () => {
             <Col className="h-100 flex-column d-flex justify-content-between">
                 <Row className="m-5">
                     {cards.map((card, index) => (
-                        <Card key={index} className="explore-card d-flex">
+                        <Card key={index} className="explore-card d-flex" onClick={() => navigate(`${card.id}`)}>
                             <Card.Img variant="top" src={card.image} className="p-2" style={{ height: '13rem', width: '13rem' }} />
                             <Card.Body>
                                 <Card.Text>
