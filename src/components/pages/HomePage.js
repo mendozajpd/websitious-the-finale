@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+
+    const navigate = useNavigate();
 
     return (
         <Container className="g-0 h-100">
@@ -26,7 +29,7 @@ const HomePage = () => {
                 </Row>
                 <Row className="pb-10">
                     <div className="d-flex justify-content-center p-5">
-                        <Button className="pill px-4" variant="light">
+                        <Button className="pill px-4" variant="light" onClick={() => navigate('explore')}>
                             <strong>
                                 E X P L O R E
                             </strong>
